@@ -1,1 +1,7 @@
 $$ npm i jest
+## pg.json - "scripts": {"test": "jest"},
+++ validateValue.js - fn/логика
+++ validateValue.test.js - настр.тест fn/логики 
+$$ npm run test validateValue.test.js - запуск опред.ф. 
+== PASS > Run ... suites
+## validateValue.test.js - настр.,describe,test,PASS
