@@ -1,0 +1,1 @@
+Повторение/узучение различных скилов по веткам репозиротия (Git) и Тестированию (Jest, React Testing Library, e2e, screenshot)
