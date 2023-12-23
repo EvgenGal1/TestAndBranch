@@ -5,7 +5,7 @@ const validateValue = require("./validateValue");
 
 // опис.теста(назв., cb проверки)
 test("Волидное значение_0", () => {
-  // `ожидать`.fn(знач.).мтд.проверки // ! не показ. > ctrl+пробел
+  // `ожидать`.fn(знач.).мтд.проверки // ! не показ.доп.fn > ctrl+пробел
   expect(validateValue(50)).toBe(true);
 });
 
