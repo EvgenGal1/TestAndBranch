@@ -1,12 +1,12 @@
-// imp.fn
+// imp.fn пров.value в опред.знач.
 const validateValue = require("./validateValue");
 // ^ преобраз.CommonJS>ES
 // import validateValue from "./validateValue";
 
 // опис.теста(назв., cb проверки)
 test("Волидное значение_0", () => {
-  // `ожидать`.fn(знач.).мтд.проверки.
-  // ^ toBe `быть` проверка равенства по ссылке
+  // `ожидать`(fn(знач.)).мтд.проверки.(сравн.знач.)
+  // ^ to Be `быть` проверка равенства примитав.знач.|| по референц.ссылке
   // ! не показ.доп.fn > ctrl+пробел
   expect(validateValue(50)).toBe(true);
 });

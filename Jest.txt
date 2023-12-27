@@ -1,7 +1,9 @@
 $$ npm i jest
 ## pg.json - "scripts": {"test": "jest"},
-++ validateValue.js - fn/логика
+++ validateValue.js - fn/логика пров.value в опред.знач.
 ++ validateValue.test.js - настр.тест fn/логики 
 $$ npm run test validateValue.test.js - запуск опред.ф. 
 == PASS > Run ... suites
-## validateValue.test.js - настр.,describe,test,PASS
+## validateValue.test.js - настр.,describe/toBe,test,PASS 
+++ mapArrToStrings./test.js - fn/логика провращ.arr > str. >> настр.,describe/toEqual/not,test,PASS
+++ mapArrToStrings./test.js - fn/логика возвед.num в квадрат >> настр.,describe/toBe/toBeLessThan/toBeGreaterThan/toBeUndefined/not,test,PASS
