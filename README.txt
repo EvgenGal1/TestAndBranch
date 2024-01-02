@@ -9,13 +9,31 @@
 ++++ UlbiTV (Jest, React Testing Library, e2e, screenshot)
 
 !! Пирамида тестирования:
-  Unit (Jest), 
-  Скриншотные тесты (storybook, loki), 
-  Integration (RTLibr - RRDom, Redux), 
-  e2e (WebdriverIO - cypress, puppeteer, hermione)
+  e2e (WebdriverIO - cypress, puppeteer, hermione) ~ 10% от общ.кол-ва
+  Integration (RTLibr - RRDom, Redux) ~ 20-30%
+  Скриншотные тесты (storybook, loki) ~ 70-80%
+  Unit (Jest) ~ 70-80%
 
+!! Два вида тестирования
+  Функциональное (здесь)
+    Модульное (unit) - отд.куски системы (fn, help, мтд.кл.,)
+    Интеграционное - тест связки модулей, компонентов, router, redux
+    end-to-end(e2e) - авто проверка функциональности на реальных данных (клики, переходы стр., заполн.форм, регистр., оплаты)
+    скриншотные - показ разницы в изначальных скриншотах страницы с новыми
+  Нефункциональные
+    Нагрузочное тест-ие
+    Тест-ие безопасности
+    Регрессионное тест-ие
+
+!! Квадрат тестирования
+  проверка допустимого значения
+  проверка пограничных значений
+  проверка не валидных значений
+
+++ JEST
 $$ git checkout -b test__UTV-Jest/RTLibr/e2e/scrsh
 $$ npm i -D jest
 ++ validateValue./test.js - fn/тест пров.value в опред.знач. >> describe/toBe,test,PASS
 ++ mapArrToStrings./test.js - fn/тест провращ.arr > str. >> describe/toEqual/not,test,PASS
-++ mapArrToStrings./test.js - fn/тест возвед.num в квадрат >> describe/toBe/toBeLessThan/toBeGreaterThan/toBeUndefined/not,test,PASS
+++ square./test.js - fn/тест возвед.num в квадрат >> describe/toBe/toBeLessThan/toBeGreaterThan/not.toBeUndefined,test,PASS
+++ spyMathPowMock./test.js - fn/тест возврат.1 | возвед.в степень >> describe/spyOn/toBeCalledTimes/beforeEach/beforeAll/afterEach/afterAll,test,PASS
