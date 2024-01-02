@@ -5,5 +5,5 @@ $$ npm i jest
 $$ npm run test validateValue.test.js - запуск опред.ф. 
 == PASS > Run ... suites
 ## validateValue.test.js - настр.,describe/toBe,test,PASS 
-++ mapArrToStrings./test.js - fn/логика провращ.arr > str. >> настр.,describe/toEqual/not,test,PASS
-++ mapArrToStrings./test.js - fn/логика возвед.num в квадрат >> настр.,describe/toBe/toBeLessThan/toBeGreaterThan/toBeUndefined/not,test,PASS
+++ mapArrToStrings./test.js - fn/логика провращ.arr > str. >> настр.тест,describe/toEqual/not,test,PASS
+++ square./test.js - fn/логика возвед.num в квадрат >> настр.тест,describe/toBe/toBeLessThan/toBeGreaterThan/toBeUndefined/not,test,PASS
