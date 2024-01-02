@@ -1,4 +1,4 @@
-// fn.пров.value в опред.знач.
+// пров.value в опред.знач.
 const validateValue = (value) => {
   if (value < 0 || value > 100) {
     return false;

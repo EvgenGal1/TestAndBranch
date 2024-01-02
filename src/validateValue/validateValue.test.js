@@ -11,7 +11,7 @@ test("Волидное значение_0", () => {
   expect(validateValue(50)).toBe(true);
 });
 
-// опис.неск.сцен.: назв.списка, cb неск.тестов
+// групп.неск.тестов: назв.списка, cb неск.тестов
 describe("validValue", () => {
   test("Корректное значение", () => {
     expect(validateValue(55)).toBe(true);
