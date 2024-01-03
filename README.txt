@@ -37,3 +37,4 @@ $$ npm i -D jest
 ++ mapArrToStrings./test.js - fn/тест провращ.arr > str. >> describe/toEqual/not,test,PASS
 ++ square./test.js - fn/тест возвед.num в квадрат >> describe/toBe/toBeLessThan/toBeGreaterThan/not.toBeUndefined,test,PASS
 ++ spyMathPowMock./test.js - fn/тест возврат.1 | возвед.в степень >> describe/spyOn/toBeCalledTimes/beforeEach/beforeAll/afterEach/afterAll,test,PASS
+++ asyncDelay./test.js - fn/тест вывод cb с задержкой >> describe/asyns/callback/toBe/toEqual,test,PASS
