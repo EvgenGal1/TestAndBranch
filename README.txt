@@ -39,4 +39,4 @@ $$ npm i -D jest
 ++ spyMathPowMock./test.js - fn/тест возврат.1 | возвед.в степень >> describe/spyOn/toBeCalledTimes/beforeEach/beforeAll/afterEach/afterAll,test,PASS
 ++ asyncDelay./test.js - fn/тест вывод cb с задержкой >> describe/asyns/callback/toBe/toEqual,test,PASS
 $$ npm i axios - асинх.req
-++ getData./test.js - fn/тест получ.[]users.id в []str. >> describe/asyns/mock/beforeEach/toBeCalledTimes/toEqual,test,PASS
+++ getData./test.js - fn/тест получ.[]users.id в []str. >> describe/asyns/mock/beforeEach/toBeCalledTimes/toEqual/toMatchSnapshot,test,PASS
