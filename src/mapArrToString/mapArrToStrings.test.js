@@ -1,4 +1,4 @@
-// imp.fn масс.преобраз.в стр.
+// imp.fn масс.чисел преобраз.в масс.стр.
 const mapArrToStrings = require("./mapArrToStrings");
 
 // групп.неск.тестов: назв.списка, cb неск.тестов
