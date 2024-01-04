@@ -16,6 +16,7 @@ const getData = async (req, res, next) => {
     const usersId = response.data.map((user) => user.id); // [ 1, 2, 3 ]
     // возращ.[]str. user.id // ^ мини integr тест
     return mapArrToStrings(usersId); // [ '1', '2', '3' ]
+    // return usersId; // ! ошб.при возврат.не []str. в toEqual и toMatchSnapshot
   } catch (error) {
     console.log("error ", error);
   }

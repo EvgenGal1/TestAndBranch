@@ -127,4 +127,12 @@ describe("getData", () => {
     // `ожидать`возвращ.[]users.id `равный` []str.
     expect(data).toEqual(["1", "2", "3"]);
   });
+  test("async Snapshot []users.'id'", async () => {
+    axios.get.mockReturnValue(response);
+    const data = await getData(); // [ '1', '2', '3' ]
+    // `ожидать`(fn).кол-во.вызывов.(1)
+    // expect(axios.get).toBeCalledTimes(1);
+    // `ожидать`возвращ.[]users.id в изначальном `соответствии снимку` []str. в /__snapshots__/getData.test.js.snap
+    expect(data).toMatchSnapshot();
+  });
 });
