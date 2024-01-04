@@ -30,9 +30,11 @@
   проверка пограничных значений
   проверка не валидных значений
 
+!! Ветки - test__UTV-Jest/RTLibr/e2e/scrsh
+
 ++ JEST
-$$ git checkout -b test__UTV-Jest/RTLibr/e2e/scrsh
-$$ npm i -D jest
+$$ git checkout -b test__UTV-Jest
+$$ npm i -D jest - устан тест jest в разработку
 ++ validateValue./test.js - fn/тест пров.value в опред.знач. >> describe/toBe,test,PASS
 ++ mapArrToStrings./test.js - fn/тест провращ.arr > str. >> describe/toEqual/not,test,PASS
 ++ square./test.js - fn/тест возвед.num в квадрат >> describe/toBe/toBeLessThan/toBeGreaterThan/not.toBeUndefined,test,PASS
@@ -40,3 +42,8 @@ $$ npm i -D jest
 ++ asyncDelay./test.js - fn/тест вывод cb с задержкой >> describe/asyns/callback/toBe/toEqual,test,PASS
 $$ npm i axios - асинх.req
 ++ getData./test.js - fn/тест получ.[]users.id в []str. >> describe/asyns/mock/beforeEach/toBeCalledTimes/toEqual/toMatchSnapshot,test,PASS
+
+++ React Testing Library (RTLibr)
+$$ git checkout -b test__UTV-RTLibr
+$$ npx create react app ./ - устан.react приложение
+## App/.test.js Комп./тест отрисовки h1, btn, input(+снимок) >> describe/test/render.Комп./screen.getByText|Role|PlaceholderText|debug/expect.toBeInTheDocument|toMatchSnapshot,test,PASS
