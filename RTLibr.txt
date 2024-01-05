@@ -1,2 +1,2 @@
 $$ npx create react app ./ - устан.react приложение
-## App/.test.js Комп./тест отрисовки h1, btn, input(+снимок) >> describe/test/render.Комп./screen.getByText|Role|PlaceholderText|debug/expect.toBeInTheDocument|toMatchSnapshot
+## App/.test.js Комп./тест отрисовки h1, btn, input(+снимок) >> describe/test/render.Комп./screen.getByText|Role|PlaceholderText|debug/expect.toBeInTheDocument|toMatchSnapshot,test,PASS
