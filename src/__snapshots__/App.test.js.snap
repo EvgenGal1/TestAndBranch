@@ -1,20 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`React Testing Library UTV renders learn react link 1`] = `
-<input
-  placeholder="введите значение..."
-  type="text"
-/>
-`;
-
 exports[`React Testing Library UTV рендеры h1, btn, inp(+снимок) 1`] = `
-<input
-  placeholder="введите значение..."
-  type="text"
-/>
-`;
-
-exports[`renders learn react link 1`] = `
 <input
   placeholder="введите значение..."
   type="text"
