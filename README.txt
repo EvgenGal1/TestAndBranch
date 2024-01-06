@@ -47,3 +47,7 @@ $$ npm i axios - асинх.req
 $$ git checkout -b test__UTV-RTLibr
 $$ npx create react app ./ - устан.react приложение
 ## App/.test.js Комп./тест отрисовки h1, btn, input(+снимок) >> describe/test/render.Комп./screen.getByText|Role|PlaceholderText|debug/expect.toBeInTheDocument|toMatchSnapshot,test,PASS
+## App/.test.js тест QUERY
+
+
+!! https://habr.com/ru/companies/elbrusbootcamp/articles/651033/ - форма отправки денег с кошельков
