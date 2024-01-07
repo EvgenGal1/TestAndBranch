@@ -47,7 +47,13 @@ $$ npm i axios - асинх.req
 $$ git checkout -b test__UTV-RTLibr
 $$ npx create react app ./ - устан.react приложение
 ## App/.test.js Комп./тест отрисовки h1, btn, input(+снимок) >> describe/test/render.Комп./screen.getByText|Role|PlaceholderText|debug/expect.toBeInTheDocument|toMatchSnapshot,test,PASS
-## App/.test.js тест QUERY
+!! ч/з спец.объ.screen(`экран`).мтд. получ.эл. (по тексту, роли, тегу, стилю, props, т.д. и т.п.)
+!! при ошб./не раб./FAIT тест - вызов screen.debug - отрисовка сгенер.разметки в renderе
+## App/.test.js Комп./тест отсутствие/асинхр(usSt/usEf/setTim/усл.ренд.) >> query/find
+!! screen.мтд.: Get(поиск.эл.на стр.иначе ошб.), Query(нет на стр.), Find(асинхр.)
+## App/.test.js Комп./тест стили эл. >> toHaveStyle,test,PASS
+## App/.test.js Комп./тест события эл.(usSt/onClick/data-testid) >> getByTestId/fireEvent.click,test,PASS
+
 
 
 !! https://habr.com/ru/companies/elbrusbootcamp/articles/651033/ - форма отправки денег с кошельков
