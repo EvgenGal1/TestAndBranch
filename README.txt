@@ -54,6 +54,7 @@ $$ npx create react app ./ - устан.react приложение
 ## App/.test.js Комп./тест стили эл. >> toHaveStyle,test,PASS
 ## App/.test.js Комп./тест события эл.CLICK(usSt/onClick/data-testid) >> getByTestId/fireEvent.click,test,PASS
 ## App/.test.js Комп./тест события эл.INPUT(usSt/onChange/data-testid) >> getByTestId/fEvent.input,test,PASS
+cg, тесты
 
 
 
