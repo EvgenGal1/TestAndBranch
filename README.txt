@@ -57,6 +57,7 @@ $$ npx create react app ./ - устан.react приложение
 ## App/.test.js Комп./тест события эл.INPUT(usSt/onChange/data-testid) >> fEvent.input,test,PASS
 !! ч/з спец.объ.userEvent(`пользовательское событие`).мтд. СОБЫТИЕ ВЗАИМОДЕЙСТВИЯ ПОЛЬЗОВАТЕЛЯ С ЭЛ. (hover, tab, keyboard, клик, измен., копир., мышь, т.д. и т.п.)
 ## App/.test.js Комп./тест события эл.INPUT(usSt/onChange/data-testid) >> userEvent.input,test,PASS
+++ users/Users/.test.js Комп./тест асинхр.получ.польз.(usSt/usEf/axios/data-testid) >> describe/test/beforeEach/render/mock/axios.get/screen.findAllByTestId|debug/expect.toBe|toHaveBeenCalledTimes,test,PASS
 cg, тесты
 
 
