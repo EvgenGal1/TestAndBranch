@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import App from "./App";
 
@@ -52,8 +53,8 @@ describe("React Testing Library UTV", () => {
     expect(h1RTLibr_3).toHaveStyle({ color: "red" });
   });
 
-  // события/клик/testId
-  test("EVENT click", async () => {
+  // события/клик/testId > fire
+  test("fire EVENT click", async () => {
     render(<App />);
     // получ.эл.по testId
     const btn = screen.getByTestId("toggle-btn");
@@ -72,14 +73,34 @@ describe("React Testing Library UTV", () => {
     expect(screen.queryByTestId("toggle-elem")).toBeNull();
   });
 
-  // input
-  test("EVENT input", async () => {
+  // input > fire
+  test("fire EVENT input", async () => {
     render(<App />);
     const inputElm = screen.getByPlaceholderText(/введите значение.../i);
     // ожидается эл.id.value-elem пустой
     expect(screen.queryByTestId("value-elem")).toContainHTML("");
-    // мтд.input(эл.value-elem, опц.target ввод
-    fireEvent.input(inputElm, { target: { value: "123123" } });
+    // ! обёртка от ошб. Warning: An update to App inside a test was not wrapped in act(...). | When testing, code that causes React state updates should be wrapped into act(...):
+    // eslint-disable-next-line testing-library/no-unnecessary-act
+    act(() => {
+      // мтд.input(эл.value-elem, опц.target ввод
+      fireEvent.input(inputElm, { target: { value: "123123" } });
+    });
+    // ожидается эл.id.value-elem со значением ввода
+    expect(screen.getByTestId("value-elem")).toContainHTML("123123");
+  });
+
+  // input > user
+  test("user EVENT input", async () => {
+    render(<App />);
+    const inputElm = screen.getByPlaceholderText(/введите значение.../i);
+    // ожидается эл.id.value-elem пустой
+    expect(screen.queryByTestId("value-elem")).toContainHTML("");
+    // ! обёртка от ошб. Warning: An update to App inside a test was not wrapped in act(...). | When testing, code that causes React state updates should be wrapped into act(...):
+    // eslint-disable-next-line testing-library/no-unnecessary-act
+    act(() => {
+      // ^ ч/з спец.объ.userEvent(`пользовательское событие`).мтд. СОБЫТИЕ ВЗАИМОДЕЙСТВИЯ ПОЛЬЗОВАТЕЛЯ С ЭЛ. (по hover, tab, keyboard, click, т.д. и т.п.)
+      userEvent.type(inputElm, "123123");
+    });
     // ожидается эл.id.value-elem со значением ввода
     expect(screen.getByTestId("value-elem")).toContainHTML("123123");
   });
