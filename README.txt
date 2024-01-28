@@ -47,13 +47,16 @@ $$ npm i axios - асинх.req
 $$ git checkout -b test__UTV-RTLibr
 $$ npx create react app ./ - устан.react приложение
 ## App/.test.js Комп./тест отрисовки h1, btn, input(+снимок) >> describe/test/render.Комп./screen.getByText|Role|PlaceholderText|debug/expect.toBeInTheDocument|toMatchSnapshot,test,PASS
-!! ч/з спец.объ.screen(`экран`).мтд. получ.эл. (по тексту, роли, тегу, стилю, props, т.д. и т.п.)
+!! ч/з спец.объ.screen(`экран`).мтд. ПОЛУЧ.ЭЛ. (по тексту, роли, тегу, стилю, props, т.д. и т.п.)
 !! при ошб./не раб./FAIT тест - вызов screen.debug - отрисовка сгенер.разметки в renderе
 ## App/.test.js Комп./тест отсутствие/асинхр(usSt/usEf/setTim/усл.ренд.) >> query/find
 !! screen.мтд.: Get(поиск.эл.на стр.иначе ошб.), Query(нет на стр.), Find(асинхр.)
 ## App/.test.js Комп./тест стили эл. >> toHaveStyle,test,PASS
-## App/.test.js Комп./тест события эл.CLICK(usSt/onClick/data-testid) >> getByTestId/fireEvent.click,test,PASS
-## App/.test.js Комп./тест события эл.INPUT(usSt/onChange/data-testid) >> getByTestId/fEvent.input,test,PASS
+!! ч/з спец.объ.fireEvent(`огненное событие`).мтд. ВЫЗЫВАЕМ СОБЫТИЕ ЭЛ. (кнп., inpt, клик, измен., копир., мышь, т.д. и т.п.)
+## App/.test.js Комп./тест события эл.КЛИК(usSt/onClick/data-testid) >> getByTestId/fireEvent.click,test,PASS
+## App/.test.js Комп./тест события эл.INPUT(usSt/onChange/data-testid) >> fEvent.input,test,PASS
+!! ч/з спец.объ.userEvent(`пользовательское событие`).мтд. СОБЫТИЕ ВЗАИМОДЕЙСТВИЯ ПОЛЬЗОВАТЕЛЯ С ЭЛ. (hover, tab, keyboard, клик, измен., копир., мышь, т.д. и т.п.)
+## App/.test.js Комп./тест события эл.INPUT(usSt/onChange/data-testid) >> userEvent.input,test,PASS
 cg, тесты
 
 
