@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import { MainPage } from "./pages/MainPage";
+import { AboutPage } from "./pages/AboutPage";
 
 const App = () => {
   // асинхр.лог. > screen.find + style (ч/з usEf/setTim обнов.usSt > показ.эл.)
@@ -27,6 +31,17 @@ const App = () => {
       <input onChange={e => setValue(e.target.value)} type="text" placeholder="введите значение..." />
       {/* вывод ввода ч/з state */}
       <h1 data-testid="value-elem">{value}</h1>
+      <br />
+      <h2>ROUTER</h2>
+      {/* // ^ router */}
+      <BrowserRouter>
+        <Link to="/" data-testid="main-link">Main</Link>
+        <Link to="/about" data-testid="about-link">About</Link>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
