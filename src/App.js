@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 import { MainPage } from "./pages/MainPage";
 import { AboutPage } from "./pages/AboutPage";
@@ -34,14 +34,14 @@ const App = () => {
       <br />
       <h2>ROUTER</h2>
       {/* // ^ router */}
-      <BrowserRouter>
+      <div>
         <Link to="/" data-testid="main-link">Main</Link>
         <Link to="/about" data-testid="about-link">About</Link>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
-      </BrowserRouter>
+      </div>
     </div>
   );
 };

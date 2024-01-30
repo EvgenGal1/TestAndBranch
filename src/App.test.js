@@ -1,5 +1,6 @@
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router-dom";
 
 import App from "./App";
 
@@ -7,7 +8,12 @@ describe("React Testing Library UTV", () => {
   // получ.эл./снимок
   test("рендеры h1, btn, inp(+снимок)", () => {
     // передача в render Комп.>теста
-    render(<App />);
+    render(
+      // ! обёртка от ошб. The above error occurred in the <Link>|<Routes> component | Cannot destructure property 'basename' ... null
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
     // ^ ч/з спец.объ.`экран`.мтд. ПОЛУЧАЕМ.ЭЛ. (по тексту, роли, тегу, стилю, props, т.д. и т.п.)
     // получ.h1 по тексту ч/з регул.выраж.без регистра (//i)
     const h1RTLibr = screen.getByText(/Привет react testing library/i);
@@ -29,7 +35,11 @@ describe("React Testing Library UTV", () => {
 
   // GET мтд.screen
   test("screen.QUERY", () => {
-    render(<App />);
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
     // ^ мтд.: GET(поиск.эл.на стр.иначе ошб.), QUERY(нет на стр.), FIND(асинхр.)
     // ожидается отсутств.эл.с текстом
     const h1RTLibr_2 = screen.queryByText(/Привет react testing library_2/i);
@@ -38,7 +48,11 @@ describe("React Testing Library UTV", () => {
 
   // FIND async мтд.screen
   test("screen.FIND", async () => {
-    render(<App />);
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
     // screen.debug(); // ^ render БЕЗ div > data
     // `ожидание`.эл.с текстом
     const h1RTLibr_3 = await screen.findByText(/data/i);
@@ -48,14 +62,22 @@ describe("React Testing Library UTV", () => {
 
   // получ.эл.по style
   test("screen.STYLE", async () => {
-    render(<App />);
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
     const h1RTLibr_3 = await screen.findByText(/data/i);
     expect(h1RTLibr_3).toHaveStyle({ color: "red" });
   });
 
   // события/клик/testId > fire
   test("fire EVENT click", async () => {
-    render(<App />);
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
     // получ.эл.по testId
     const btn = screen.getByTestId("toggle-btn");
     // получ.эл. > query т.к. эл.изначально нет // ! ошб. т.к. эл.записан в перем.до появления // ~ перенос лог.в expect
@@ -75,7 +97,11 @@ describe("React Testing Library UTV", () => {
 
   // input > fire
   test("fire EVENT input", async () => {
-    render(<App />);
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
     const inputElm = screen.getByPlaceholderText(/введите значение.../i);
     // ожидается эл.id.value-elem пустой
     expect(screen.queryByTestId("value-elem")).toContainHTML("");
@@ -91,7 +117,11 @@ describe("React Testing Library UTV", () => {
 
   // input > user
   test("user EVENT input", async () => {
-    render(<App />);
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
     const inputElm = screen.getByPlaceholderText(/введите значение.../i);
     // ожидается эл.id.value-elem пустой
     expect(screen.queryByTestId("value-elem")).toContainHTML("");
