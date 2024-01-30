@@ -61,7 +61,8 @@ $$ npm i axios - асинх.req
 $$ npm i react-router-dom - маршрт.стр.
 ## index,App.js Комп. - подкл.стр., вкл.,лог.router, чистка
 ++ Комп.Main,About.jsx - страницы
-++ Router.test.js тест react-router-dom describe/test/act/userEvent.click/screen.getByTestId
+++ Router.test.js тест react-router-dom describe/test/act/userEvent.click/screen.getByTestId,test,PASS
+## index,App/.test.js Комп./тест - перенос BrowserRouter в ind >> кажд.test App.оборач.в MemoryRouter test,PASS
 cg, тесты
 
 
