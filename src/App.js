@@ -3,6 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import { MainPage } from "./pages/MainPage";
 import { AboutPage } from "./pages/AboutPage";
+import { ErrorPage } from "./pages/ErrorPage";
 
 const App = () => {
   // асинхр.лог. > screen.find + style (ч/з usEf/setTim обнов.usSt > показ.эл.)
@@ -40,6 +41,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </div>
     </div>

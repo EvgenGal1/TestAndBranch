@@ -39,4 +39,20 @@ describe("RTLibr TEST APP", () => {
     // eslint-disable-next-line testing-library/no-debugging-utils
     // screen.debug(); // ^ отрисов весь Комп.App, в конце data-testid="main-page"><h3>MainPage
   });
+
+  // не сущ.стр.
+  test("error PAGE test", () => {
+    render(
+      <MemoryRouter
+        // масс.путей рендера (указ не существующий)
+        initialEntries={["/qwerty"]}
+      >
+        <App />
+      </MemoryRouter>
+    );
+    // `ожидается` редирект на стр.с эл. testId "not-found-page" в документе
+    expect(screen.getByTestId("not-found-page")).toBeInTheDocument();
+
+    // screen.debug(); // ^ перенаправ на стр.data-testid="not-found-page"
+  });
 });
