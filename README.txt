@@ -67,6 +67,7 @@ $$ npm i react-router-dom - маршрт.стр.
 ## App/Router.test.js Комп./тест - path="/*" >> MemoryRouter initialEntries={["/qwerty"]}, scr.testId."not-found-page",test,PASS
 cg, тесты
 cg, тесты _ 2
+cg, тесты _ 3
 
 
 
