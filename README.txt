@@ -65,10 +65,7 @@ $$ npm i react-router-dom - маршрт.стр.
 ## index,App/.test.js Комп./тест - перенос BrowserRouter в ind >> кажд.test App.оборач.в MemoryRouter test,PASS
 ++ Комп.ErrorPage.jsx - не существующая страница
 ## App/Router.test.js Комп./тест - path="/*" >> MemoryRouter initialEntries={["/qwerty"]}, scr.testId."not-found-page",test,PASS
-cg, тесты
-cg, тесты _ 2
-cg, тесты _ 3
-cg, тесты _ 4
+$+ sass | index.scss - cl.,stl.,архитектура, правки
 
 
 
