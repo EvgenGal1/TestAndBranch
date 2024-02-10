@@ -16,7 +16,7 @@ describe("React Testing Library UTV", () => {
     );
     // ^ ч/з спец.объ.`экран`.мтд. ПОЛУЧАЕМ.ЭЛ. (по тексту, роли, тегу, стилю, props, т.д. и т.п.)
     // получ.h1 по тексту ч/з регул.выраж.без регистра (//i)
-    const h1RTLibr = screen.getByText(/Привет react testing library/i);
+    const h1RTLibr = screen.getByText(/React Testing Library/i);
     // получ.button по роли кнп.
     const btn = screen.getByRole("button");
     // получ.input по`заполнителю`
@@ -67,8 +67,8 @@ describe("React Testing Library UTV", () => {
         <App />
       </MemoryRouter>
     );
-    const h1RTLibr_3 = await screen.findByText(/data/i);
-    expect(h1RTLibr_3).toHaveStyle({ color: "red" });
+    const h1RTLibr_4 = await screen.findByText(/data/i);
+    expect(h1RTLibr_4).toHaveStyle({ color: "red" });
   });
 
   // события/клик/testId > fireEvent

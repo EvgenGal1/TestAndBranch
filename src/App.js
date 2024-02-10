@@ -23,7 +23,7 @@ const App = () => {
     <div className="App">
       <h1>React Testing Library</h1>
       <div className="start-rtl">
-        <span>*</span><h3>Стартовые fn(state, usSt, usEf, data-testid, fireEvent, userEvent)</h3>
+        <h3>Стартовые fn(state, usSt, usEf, daта-testid, fireEvent, userEvent)</h3>
         <div>
           {/* асинхр.лог. + style > screen.find */}
           {data && <div style={{ color: "red" }}>data</div>}
@@ -45,7 +45,7 @@ const App = () => {
         </div>
       </div>
       {/* // ^ router */}
-      <div class="router">
+      <div className="router">
         <h3>ROUTER</h3>
         <nav>
           <Link to="/" data-testid="main-link">Main</Link>
