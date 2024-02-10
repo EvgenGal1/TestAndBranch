@@ -21,23 +21,36 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Привет React Testing Library</h1>
-      {/* асинхр.лог. > screen.find + style */}
-      {data && <div style={{ color: "red" }}>data</div>}
-      {/* лог.событий(fireEvent)/testId/toggle(переключ.) */}
-      {toggle === true && <div data-testid="toggle-elem">toggle</div>}
-      {/* btn + testId(получ.эл.) + слуш.событ. > toggle(переключ.) */}
-      <button data-testid="toggle-btn" onClick={onClick}>нажми на меня</button>
-      {/* ввода и связь со state */}
-      <input onChange={e => setValue(e.target.value)} type="text" placeholder="введите значение..." />
-      {/* вывод ввода ч/з state */}
-      <h1 data-testid="value-elem">{value}</h1>
-      <br />
-      <h2>ROUTER</h2>
+      <h1>React Testing Library</h1>
+      <div className="start-rtl">
+        <span>*</span><h3>Стартовые fn(state, usSt, usEf, data-testid, fireEvent, userEvent)</h3>
+        <div>
+          {/* асинхр.лог. + style > screen.find */}
+          {data && <div style={{ color: "red" }}>data</div>}
+          <p>тип асинхр.лог. + style &gt; screen.find</p>
+        </div>
+        <div>
+          {/* btn + testId(получ.эл.) + слуш.событ. > toggle(переключ.) */}
+          <button data-testid="toggle-btn" onClick={onClick}>нажми на меня</button>
+          {/* лог.событий(fireEvent)/testId/toggle(переключ.) */}
+          {toggle === true && <div data-testid="toggle-elem">toggle</div>}
+          <p>btn + testId + onClick &gt; toggle</p>
+        </div>
+        <div>
+          {/* ввода и связь со state */}
+          <input onChange={e => setValue(e.target.value)} type="text" placeholder="введите значение..." />
+          {/* вывод ввода ч/з state */}
+          <span data-testid="value-elem">{value}</span>
+          <p>ввод + вывод + связь ч/з state</p>
+        </div>
+      </div>
       {/* // ^ router */}
-      <div>
-        <Link to="/" data-testid="main-link">Main</Link>
-        <Link to="/about" data-testid="about-link">About</Link>
+      <div class="router">
+        <h3>ROUTER</h3>
+        <nav>
+          <Link to="/" data-testid="main-link">Main</Link>
+          <Link to="/about" data-testid="about-link">About</Link>
+        </nav>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/about" element={<AboutPage />} />

@@ -10,7 +10,7 @@ describe("RTLibr TEST APP", () => {
   test("ROUTER test", () => {
     // передача в render Комп.>теста
     render(
-      // ! обёртка от ошб. The above error occurred in the <Link>|<Routes> component | Cannot destructure property 'basename' ... null
+      // ! обёртка MemoryRouter от ошб. The above error occurred in the <Link>|<Routes> component | Cannot destructure property 'basename' ... null
       <MemoryRouter>
         <App />
       </MemoryRouter>

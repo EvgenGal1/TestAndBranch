@@ -9,7 +9,7 @@ describe("React Testing Library UTV", () => {
   test("рендеры h1, btn, inp(+снимок)", () => {
     // передача в render Комп.>теста
     render(
-      // ! обёртка от ошб. The above error occurred in the <Link>|<Routes> component | Cannot destructure property 'basename' ... null
+      // ! обёртка MemoryRouter от ошб. The above error occurred in the <Link>|<Routes> component | Cannot destructure property 'basename' ... null
       <MemoryRouter>
         <App />
       </MemoryRouter>
@@ -71,7 +71,7 @@ describe("React Testing Library UTV", () => {
     expect(h1RTLibr_3).toHaveStyle({ color: "red" });
   });
 
-  // события/клик/testId > fire
+  // события/клик/testId > fireEvent
   test("fire EVENT click", async () => {
     render(
       <MemoryRouter>
@@ -95,7 +95,7 @@ describe("React Testing Library UTV", () => {
     expect(screen.queryByTestId("toggle-elem")).toBeNull();
   });
 
-  // input > fire
+  // input > fireEvent
   test("fire EVENT input", async () => {
     render(
       <MemoryRouter>
@@ -115,7 +115,7 @@ describe("React Testing Library UTV", () => {
     expect(screen.getByTestId("value-elem")).toContainHTML("123123");
   });
 
-  // input > user
+  // input > userEvent
   test("user EVENT input", async () => {
     render(
       <MemoryRouter>
