@@ -17,7 +17,7 @@ const Users = () => {
   }, []);
   return (
     // отрис.польз.ч/з map
-    <div className="users">
+    <div className="users" data-testid="users-page">
       {users.map((user) => (
         // замена div > Link
         <Link to={`/users/${user.id}`} key={user.id} data-testid="user-item">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import AppRouter from "./router/AppRouter";
+import NavBar from "./components/NavBar/NavBar";
 
 const App = () => {
   // асинхр.лог. > screen.find + style (ч/з usEf/setTim обнов.usSt > показ.эл.)
@@ -45,11 +45,7 @@ const App = () => {
       {/* // ^ router */}
       <div className="router">
         <h3>ROUTER</h3>
-        <nav>
-          <Link to="/" data-testid="main-link">Main</Link>
-          <Link to="/about" data-testid="about-link">About</Link>
-          <Link to="/users" data-testid="users-link">Users</Link>
-        </nav>
+        <NavBar />
         <AppRouter />
       </div>
     </div>

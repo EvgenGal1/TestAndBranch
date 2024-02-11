@@ -33,7 +33,7 @@ describe("USERS test", () => {
   });
 
   test("USERS. axios, redirect link", async () => {
-    // отрисов Комп. + обёртка MemoryRouter
+    // отрисов.Комп. + обёртка MemoryRouter
     render(
       <MemoryRouter>
         <Users />
@@ -52,7 +52,7 @@ describe("USERS test", () => {
   test("USERS. redirect > UserDetalisPage", async () => {
     render(
       // ^ использ.helper переходов м/у стр.(отрис.AppRouter + передан.Комп. + передан.путь)
-      renderWithRouter(<Users /> /* // ^ альтер.вар. - null, "/users" */)
+      renderWithRouter(<Users />) // ^ альтер.вар. - null, "/users"
     );
     // получ.масс.эл.
     const users = await screen.findAllByTestId("user-item");
