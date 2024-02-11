@@ -71,6 +71,8 @@ $+ sass | index.scss - cl.,stl.,архитектура, правки
 ++ Комп.AppRouter Комп.общ.стр. Routes.Route из App
 ## App.js Routes.Route<>AppRouter замена общ.AppRouter
 ## Users.test.js тест >> замена initialEntries>Routes>Route на Комп.AppRouter + Users
+++ tests/helpers/renderWithRouter.js helper переходов м/у стр.(экспорт fn.отрисовки всех маршрутов и Комп. Приним.Комп.отрисовки и начальн.маршрут)
+## Users.test.js тест >> замена Комп.AppRouter + Users на renderWithRouter
 
 
 
