@@ -3,6 +3,8 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import { MainPage } from "./pages/MainPage";
 import { AboutPage } from "./pages/AboutPage";
+import Users from "./users/Users";
+import { UserDetalisPage } from "./pages/UserDetalisPage";
 import { ErrorPage } from "./pages/ErrorPage";
 
 const App = () => {
@@ -50,10 +52,13 @@ const App = () => {
         <nav>
           <Link to="/" data-testid="main-link">Main</Link>
           <Link to="/about" data-testid="about-link">About</Link>
+          <Link to="/users" data-testid="users-link">Users</Link>
         </nav>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/users/:id" element={<UserDetalisPage />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </div>

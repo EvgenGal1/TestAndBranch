@@ -33,4 +33,11 @@
       background-color: khaki;
     }
   }
+  .users {
+    display: flex;
+    flex-direction: column;
+    a {
+      background-color: unset;
+    }
+  }
 }
