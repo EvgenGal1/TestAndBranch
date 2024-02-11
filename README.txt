@@ -75,6 +75,8 @@ $+ sass | index.scss - cl.,stl.,архитектура, правки
 ## Users.test.js тест >> замена Комп.AppRouter + Users на renderWithRouter
 ++ components/NavBar/NavBar.js - Комп. меню ссылок из App
 ## App.js Link<>NavBar замена отдельным меню ссылок
+++ NavBar.test.js тест - тест ссылок меню >> async, scr.testId, userE.click, expect.toDoc, test,PASS
+## renderWithRouter(возвращ.render)
 
 
 
