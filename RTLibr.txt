@@ -30,6 +30,7 @@ $$++ npm i sass | index.scss - cl., stl., архитектура, правки
 ++ components/NavBar/NavBar.js - Комп. меню ссылок из App
 ## App.js Link<>NavBar замена отдельным меню ссылок
 ++ NavBar.test.js тест - тест ссылок меню >> async, scr.testId, userE.click, expect.toDoc, test,PASS
+## renderWithRouter(возвращ.render)
 
 
 !! https://habr.com/ru/companies/elbrusbootcamp/articles/651033/

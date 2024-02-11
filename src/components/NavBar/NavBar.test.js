@@ -1,4 +1,4 @@
-import { render, screen, act } from "@testing-library/react";
+import { screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import NavBar from "./NavBar";
@@ -8,8 +8,9 @@ describe("NavBar test", () => {
   // тест ссылки about
   test("NavBar. test about link", async () => {
     // отрисов.Комп.ч/з helper renderWithRouter
-    // ! перенести render в renderWithRouter
-    render(renderWithRouter(<NavBar />));
+    // ^ перенос render в renderWithRouter
+    // render(renderWithRouter(<NavBar />));
+    renderWithRouter(<NavBar />);
     // получ.эл.по testId
     const aboutLink = screen.getByTestId("about-link");
     // отраб.click и появл.эл.на стр.
@@ -23,7 +24,7 @@ describe("NavBar test", () => {
 
   // тест ссылки main
   test("NavBar. test main link", async () => {
-    render(renderWithRouter(<NavBar />));
+    renderWithRouter(<NavBar />);
     const mainLink = screen.getByTestId("main-link");
     act(() => {
       userEvent.click(mainLink);
@@ -33,7 +34,7 @@ describe("NavBar test", () => {
 
   // тест ссылки main
   test("NavBar. test users link", async () => {
-    render(renderWithRouter(<NavBar />));
+    renderWithRouter(<NavBar />);
     const usersLink = screen.getByTestId("users-link");
     act(() => {
       userEvent.click(usersLink);

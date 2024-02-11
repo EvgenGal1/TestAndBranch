@@ -50,10 +50,11 @@ describe("USERS test", () => {
   });
 
   test("USERS. redirect > UserDetalisPage", async () => {
-    render(
-      // ^ использ.helper переходов м/у стр.(отрис.AppRouter + передан.Комп. + передан.путь)
-      renderWithRouter(<Users />) // ^ альтер.вар. - null, "/users"
-    );
+    // ^ перенос render в renderWithRouter
+    // render(
+    // ^ использ.helper переходов м/у стр.(отрис.AppRouter + передан.Комп. + передан.путь)
+    renderWithRouter(<Users />); // ^ альтер.вар. - null, "/users"
+    // );
     // получ.масс.эл.
     const users = await screen.findAllByTestId("user-item");
     // eslint-disable-next-line testing-library/no-unnecessary-act
