@@ -66,6 +66,7 @@ $$ npm i react-router-dom - маршрт.стр.
 ++ Комп.ErrorPage.jsx - не существующая страница
 ## App/Router.test.js Комп./тест - path="/*" >> MemoryRouter initialEntries={["/qwerty"]}, scr.testId."not-found-page",test,PASS
 $+ sass | index.scss - cl.,stl.,архитектура, правки
+++ Комп.UserDetalisPage.jsx - данн.1го польз., подкл., stl
 
 
 
