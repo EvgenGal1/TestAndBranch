@@ -1,9 +1,12 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 
 import Users from "./Users";
+import { UserDetalisPage } from "../pages/UserDetalisPage";
 
-import axios from "axios";
 // const axios = require("axios");
+import axios from "axios";
 
 // заmockать данн.axios.get
 jest.mock("axios");
@@ -21,14 +24,27 @@ describe("USERS test", () => {
         { id: 3, name: "Bob" },
       ],
     };
+
+    // обращ.к модулю с вызов.к мтд.`макет возвращаемого значения` с передачей response. jest навещ.дан.mock как возрващ.значение у axios.get
+    axios.get.mockReturnValue(response);
   });
 
-  test("USERS axios", async () => {
+  afterEach(() => {
+    // откл.mock после кажд.теста
+    jest.clearAllMocks();
+  });
+
+  test("USERS. axios, redirect link", async () => {
     // согласовка схемы с мтд.axios.get
     // обращ.к модулю с вызов.к мтд.`макет возвращаемого значения` с передачей response
-    // jest навещ.дан.mock как возрващ.значение у axios.get
-    axios.get.mockReturnValue(response);
-    render(<Users />);
+    // jest навещ.дан.mock как возрващ.значение у axios.get // ^ перенос в beforeEach
+    // axios.get.mockReturnValue(response);
+    // отрисов Комп. + обёртка MemoryRouter
+    render(
+      <MemoryRouter>
+        <Users />
+      </MemoryRouter>
+    );
     // получ.масс.эл.
     const users = await screen.findAllByTestId("user-item");
     // ожид.3 эл.
@@ -37,5 +53,35 @@ describe("USERS test", () => {
     expect(axios.get).toHaveBeenCalledTimes(1); // ^ устр. toBeCalledTimes(1);
     // eslint-disable-next-line testing-library/no-debugging-utils
     screen.debug();
+  });
+
+  test("USERS. redirect > UserDetalisPage", async () => {
+    // mock возрващ.значение с БД // ^ перенос в beforeEach
+    // axios.get.mockReturnValue(response);
+    render(
+      <MemoryRouter
+        // ! указ.нач.путь(initialEntries) и ссылки(Route.Route) от ошб. TestingLibraryElementError: Unable to find an element by | Ignored nodes: comments, script, style
+        initialEntries={["/users"]}
+      >
+        {/* <Users /> */}
+        <Routes>
+          <Route path="/users" element={<Users />} />
+          <Route path="/users/:id" element={<UserDetalisPage />} />
+        </Routes>
+      </MemoryRouter>
+    );
+    // получ.масс.эл.
+    const users = await screen.findAllByTestId("user-item");
+    // eslint-disable-next-line testing-library/no-unnecessary-act
+    act(() => {
+      // клик на польз.с id 0
+      userEvent.click(users[0]);
+    });
+    // ожид.эл.с id user-page
+    expect(screen.getByTestId("user-page")).toBeInTheDocument();
+    // // `ожидать`(fn).кол-во.вызывов.(1)
+    // expect(axios.get).toHaveBeenCalledTimes(1); // ^ устр. toBeCalledTimes(1);
+    // // eslint-disable-next-line testing-library/no-debugging-utils
+    // screen.debug();
   });
 });

@@ -1,7 +1,8 @@
 // асинхр.получ.польз.
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 // const axios = require("axios");
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Users = () => {
   // state польз.
@@ -18,11 +19,12 @@ const Users = () => {
   }, []);
   return (
     // отрис.польз.ч/з map
-    <div>
+    <div className="users">
       {users.map((user) => (
-        <div key={user.id} data-testid="user-item">
+        // замена div > Link
+        <Link to={`/users/${user.id}`} key={user.id} data-testid="user-item">
           {user.name}
-        </div>
+        </Link>
       ))}
     </div>
   );
