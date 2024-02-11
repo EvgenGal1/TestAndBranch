@@ -1,11 +1,10 @@
 import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { MemoryRouter /* , Routes, Route */ } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import axios from "axios";
 
-import Users from "./Users";
-// import { UserDetalisPage } from "../pages/UserDetalisPage";
 import AppRouter from "../router/AppRouter";
+import Users from "./Users";
 
 // заmockать данн.axios.get
 jest.mock("axios");

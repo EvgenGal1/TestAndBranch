@@ -1,9 +1,11 @@
 import React from "react";
 
-export const MainPage = () => {
+const MainPage = () => {
   return (
     <div data-testid="main-page">
       <h3>MainPage</h3>
     </div>
   );
 };
+
+export default MainPage;
