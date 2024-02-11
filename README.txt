@@ -68,6 +68,9 @@ $$ npm i react-router-dom - маршрт.стр.
 $+ sass | index.scss - cl.,stl.,архитектура, правки
 ++ Комп.UserDetalisPage.jsx - данн.1го польз., подкл., stl
 ## Users/.test.js Комп./тест - div<>Link >> async, MemoryRouter.initialEntries={["/users"]},Routes>Route, scr.testId, userEvent.click, test,PASS
+++ Комп.AppRouter Комп.общ.стр. Routes.Route из App
+## App.js Routes.Route<>AppRouter замена общ.AppRouter
+## Users.test.js тест >> замена initialEntries>Routes>Route на Комп.AppRouter + Users
 
 
 
