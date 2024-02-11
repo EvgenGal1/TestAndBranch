@@ -1,6 +1,5 @@
 // асинхр.получ.польз.
 import React, { useEffect, useState } from "react";
-// const axios = require("axios");
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -10,7 +9,6 @@ const Users = () => {
   // fn получ.польз.
   const loadUsers = async () => {
     const resp = await axios.get("https://jsonplaceholder.typicode.com/users");
-    // console.log('resp ', resp);
     setUsers(resp.data);
   };
   // вызов fn ч/з usEf
