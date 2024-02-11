@@ -3,8 +3,9 @@ import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import axios from "axios";
 
-import AppRouter from "../router/AppRouter";
+// import AppRouter from "../router/AppRouter";
 import Users from "./Users";
+import { renderWithRouter } from "../tests/helpers/renderWithRouter";
 
 // заmockать данн.axios.get
 jest.mock("axios");
@@ -57,19 +58,21 @@ describe("USERS test", () => {
     // mock возрващ.значение с БД // ^ перенос в beforeEach
     // axios.get.mockReturnValue(response);
     render(
-      <MemoryRouter
-      // ! указ.нач.путь(initialEntries) и ссылки(Route.Route) от ошб. TestingLibraryElementError: Unable to find an element by | Ignored nodes: comments, script, style
-      // initialEntries={["/users"]} // ^ не нужен после общ.AppRouter и отдельн.Комп.Users
-      >
-        {/* // ! указ.нач.путь(initialEntries) и ссылки(Route.Route) от ошб. TestingLibraryElementError: Unable to find an element by | Ignored nodes: comments, script, style */}
-        {/* <Routes>
-          <Route path="/users" element={<Users />} />
-          <Route path="/users/:id" element={<UserDetalisPage />} />
-        </Routes> */}
-        {/* // ^ заводим отд.ф.AppRouter для всех стр. */}
-        <AppRouter />
-        <Users />
-      </MemoryRouter>
+      // <MemoryRouter
+      // // ! указ.нач.путь(initialEntries) и ссылки(Route.Route) от ошб. TestingLibraryElementError: Unable to find an element by | Ignored nodes: comments, script, style
+      // // initialEntries={["/users"]} // ^ не нужен после общ.AppRouter и отдельн.Комп.Users
+      // >
+      //   {/* // ! указ.нач.путь(initialEntries) и ссылки(Route.Route) от ошб. TestingLibraryElementError: Unable to find an element by | Ignored nodes: comments, script, style */}
+      //   {/* <Routes>
+      //     <Route path="/users" element={<Users />} />
+      //     <Route path="/users/:id" element={<UserDetalisPage />} />
+      //   </Routes> */}
+      //   {/* // ^ заводим отд.ф.AppRouter для всех стр. */}
+      //   <AppRouter />
+      //   <Users />
+      // </MemoryRouter>
+      // ^ использ.helper переходов м/у стр.(отрис.AppRouter + передан.Комп. + передан.путь)
+      renderWithRouter(<Users /> /* // ^ альтер.вар. - null, "/users" */)
     );
     // получ.масс.эл.
     const users = await screen.findAllByTestId("user-item");
@@ -80,9 +83,5 @@ describe("USERS test", () => {
     });
     // ожид.эл.с id user-page
     expect(screen.getByTestId("user-page")).toBeInTheDocument();
-    // // `ожидать`(fn).кол-во.вызывов.(1)
-    // expect(axios.get).toHaveBeenCalledTimes(1); // ^ устр. toBeCalledTimes(1);
-    // // eslint-disable-next-line testing-library/no-debugging-utils
-    // screen.debug();
   });
 });
