@@ -1,12 +1,11 @@
 import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { MemoryRouter, Routes, Route } from "react-router-dom";
+import { MemoryRouter /* , Routes, Route */ } from "react-router-dom";
+import axios from "axios";
 
 import Users from "./Users";
-import { UserDetalisPage } from "../pages/UserDetalisPage";
-
-// const axios = require("axios");
-import axios from "axios";
+// import { UserDetalisPage } from "../pages/UserDetalisPage";
+import AppRouter from "../router/AppRouter";
 
 // заmockать данн.axios.get
 jest.mock("axios");
@@ -60,14 +59,17 @@ describe("USERS test", () => {
     // axios.get.mockReturnValue(response);
     render(
       <MemoryRouter
-        // ! указ.нач.путь(initialEntries) и ссылки(Route.Route) от ошб. TestingLibraryElementError: Unable to find an element by | Ignored nodes: comments, script, style
-        initialEntries={["/users"]}
+      // ! указ.нач.путь(initialEntries) и ссылки(Route.Route) от ошб. TestingLibraryElementError: Unable to find an element by | Ignored nodes: comments, script, style
+      // initialEntries={["/users"]} // ^ не нужен после общ.AppRouter и отдельн.Комп.Users
       >
-        {/* <Users /> */}
-        <Routes>
+        {/* // ! указ.нач.путь(initialEntries) и ссылки(Route.Route) от ошб. TestingLibraryElementError: Unable to find an element by | Ignored nodes: comments, script, style */}
+        {/* <Routes>
           <Route path="/users" element={<Users />} />
           <Route path="/users/:id" element={<UserDetalisPage />} />
-        </Routes>
+        </Routes> */}
+        {/* // ^ заводим отд.ф.AppRouter для всех стр. */}
+        <AppRouter />
+        <Users />
       </MemoryRouter>
     );
     // получ.масс.эл.
