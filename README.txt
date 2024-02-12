@@ -77,6 +77,8 @@ $+ sass | index.scss - cl.,stl.,архитектура, правки
 ## App.js Link<>NavBar замена отдельным меню ссылок
 ++ NavBar.test.js тест - тест ссылок меню >> async, scr.testId, userE.click, expect.toDoc, test,PASS
 ## renderWithRouter(возвращ.render)
+$$ npm i @reduxjs/toolkit react-redux - хран-ще, связь с react
+++ store/store.js + reducers/counterReducer.js - хранилище, действия
 
 
 
