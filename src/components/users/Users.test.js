@@ -4,7 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import axios from "axios";
 
 import Users from "./Users";
-import { renderWithRouter } from "../tests/helpers/renderWithRouter";
+import { renderWithRouter } from "../../tests/helpers/renderWithRouter";
 
 // заmockать данн.axios.get
 jest.mock("axios");

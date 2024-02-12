@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import MainPage from "../pages/MainPage";
 import AboutPage from "../pages/AboutPage";
-import Users from "../users/Users";
+import Users from "../components/users/Users";
 import UserDetalisPage from "../pages/UserDetalisPage";
 import ErrorPage from "../pages/ErrorPage";
 
