@@ -8,10 +8,13 @@ const rootReducer = combineReducers({
   counter: counterReducer,
 });
 
-export const createReduxStore = () => {
+// приним.нач.знач.initialState
+export const createReduxStore = (initialState = {}) => {
   // возращ.результ.из `настр.хран.`
   return configureStore({
     // указ.корн.редуктора
-    reducer: { rootReducer },
+    reducer: rootReducer,
+    // `предварительно загруженное состояние`. Можно указ.нач.знач. - preloadedState:{counter:{value:1234}}
+    preloadedState: initialState,
   });
 };
