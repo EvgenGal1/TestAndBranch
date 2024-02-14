@@ -79,6 +79,9 @@ $+ sass | index.scss - cl.,stl.,архитектура, правки
 ## renderWithRouter(возвращ.render)
 $$ npm i @reduxjs/toolkit react-redux - хран-ще, связь с react
 ++ store/store.js + reducers/counterReducer.js - хранилище, действия
+++ components/Counter/Counter.js - Комп.счётчика
+++ store/reducers/selectors/getCounterValue/.test.js Комп./тест - селектор для получ.знач.счётчика(fn приним.state и возвращ.его часть)
+## MainPage.jsx подкл. Counter.js
 
 
 
