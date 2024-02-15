@@ -82,7 +82,8 @@ $$ npm i @reduxjs/toolkit react-redux - хран-ще, связь с react
 ++ components/Counter/Counter.js - Комп.счётчика
 ++ store/reducers/selectors/getCounterValue/.test.js Комп./тест - селектор для получ.знач.счётчика(fn приним.state и возвращ.его часть)
 ## MainPage.jsx подкл. Counter.js
-
+$$ npm i redux-mock-store - возм.от ошб.отсуств.обёртки Provider+store в тестах. Общ.обн.пакетов
+## App.test/Router.test/renderWithRouter тест/helper >> кажд.test в обёртку Provider + store test,PASS
 
 
 !! https://habr.com/ru/companies/elbrusbootcamp/articles/651033/ - форма отправки денег с кошельков
