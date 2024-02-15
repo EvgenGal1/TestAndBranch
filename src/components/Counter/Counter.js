@@ -10,7 +10,6 @@ const Counter = () => {
   const dispatch = useDispatch();
   // получат.данн.(аргум.селектор getCounterValue)
   const value = useSelector(getCounterValue);
-  console.log(value);
 
   // fn > действ.
   const onIncrement = () => {

@@ -1,4 +1,4 @@
-// `счетчик срез`. действия хран-ща
+// `счетчик срез`. действия хран-ща. чистая fn
 import { createSlice } from "@reduxjs/toolkit";
 
 export const counterSlice = createSlice({
