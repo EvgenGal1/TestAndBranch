@@ -84,6 +84,8 @@ $$ npm i @reduxjs/toolkit react-redux - хран-ще, связь с react
 ## MainPage.jsx подкл. Counter.js
 $$ npm i redux-mock-store - возм.от ошб.отсуств.обёртки Provider+store в тестах. Общ.обн.пакетов
 ## App.test/Router.test/renderWithRouter тест/helper >> кажд.test в обёртку Provider + store test,PASS
+++ getCounterValue.test.js тест селектора >> describe, getCounterValue({}|100), test,PASS
+++ counterReducer.test.js тест редьюсера >> describe, counterReducer(increment|decrement|undefined).toEqual(1|-1), test,PASS
 
 
 !! https://habr.com/ru/companies/elbrusbootcamp/articles/651033/ - форма отправки денег с кошельков
