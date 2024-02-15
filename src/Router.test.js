@@ -1,8 +1,10 @@
 import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 
 import App from "./App";
+import { createReduxStore } from "./store/store";
 
 // групп.неск.тестов.: назв.списка, cb неск.тестов
 describe("RTLibr TEST APP", () => {
@@ -10,10 +12,13 @@ describe("RTLibr TEST APP", () => {
   test("ROUTER test", () => {
     // передача в render Комп.>теста
     render(
-      // ! обёртка MemoryRouter от ошб. The above error occurred in the <Link>|<Routes> component | Cannot destructure property 'basename' ... null
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
+      // ! обёртка Provider + store от ошб. could not find react-redux context value; please ensure the component is wrapped in a <Provider>
+      <Provider store={createReduxStore()}>
+        {/* // ! обёртка MemoryRouter от ошб. The above error occurred in the <Link>|<Routes> component | Cannot destructure property 'basename' ... null */}
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      </Provider>
     );
     // ^ ч/з спец.объ.`экран`.мтд. ПОЛУЧАЕМ.ЭЛ. (по dataId, тексту, роли, тегу, стилю, props, т.д. и т.п.)
     // получ.эл.по testId

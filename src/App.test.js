@@ -1,24 +1,29 @@
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 
 import App from "./App";
+import { createReduxStore } from "./store/store";
 
 describe("React Testing Library UTV", () => {
   // получ.эл./снимок
   test("рендеры h1, btn, inp(+снимок)", () => {
     // передача в render Комп.>теста
     render(
-      // ! обёртка MemoryRouter от ошб. The above error occurred in the <Link>|<Routes> component | Cannot destructure property 'basename' ... null
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
+      // ! обёртка Provider + store от ошб. could not find react-redux context value; please ensure the component is wrapped in a <Provider>
+      <Provider store={createReduxStore()}>
+        {/* // ! обёртка MemoryRouter от ошб. The above error occurred in the <Link>|<Routes> component | Cannot destructure property 'basename' ... null */}
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      </Provider>
     );
     // ^ ч/з спец.объ.`экран`.мтд. ПОЛУЧАЕМ.ЭЛ. (по тексту, роли, тегу, стилю, props, т.д. и т.п.)
     // получ.h1 по тексту ч/з регул.выраж.без регистра (//i)
     const h1RTLibr = screen.getByText(/React Testing Library/i);
     // получ.button по роли кнп.
-    const btn = screen.getByRole("button");
+    const btn = screen.getByRole("btn");
     // получ.input по`заполнителю`
     const input = screen.getByPlaceholderText(/введите значение/i);
     // `ожидание`(эл.)`быть в документе`; (появился в DOM/странице)
@@ -36,9 +41,11 @@ describe("React Testing Library UTV", () => {
   // GET мтд.screen
   test("screen.QUERY", () => {
     render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
+      <Provider store={createReduxStore()}>
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      </Provider>
     );
     // ^ мтд.: GET(поиск.эл.на стр.иначе ошб.), QUERY(нет на стр.), FIND(асинхр.)
     // ожидается отсутств.эл.с текстом
@@ -49,9 +56,11 @@ describe("React Testing Library UTV", () => {
   // FIND async мтд.screen
   test("screen.FIND", async () => {
     render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
+      <Provider store={createReduxStore()}>
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      </Provider>
     );
     // screen.debug(); // ^ render БЕЗ div > data
     // `ожидание`.эл.с текстом
@@ -63,9 +72,11 @@ describe("React Testing Library UTV", () => {
   // получ.эл.по style
   test("screen.STYLE", async () => {
     render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
+      <Provider store={createReduxStore()}>
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      </Provider>
     );
     const h1RTLibr_4 = await screen.findByText(/data/i);
     expect(h1RTLibr_4).toHaveStyle({ color: "red" });
@@ -74,9 +85,11 @@ describe("React Testing Library UTV", () => {
   // события/клик/testId > fireEvent
   test("fire EVENT click", async () => {
     render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
+      <Provider store={createReduxStore()}>
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      </Provider>
     );
     // получ.эл.по testId
     const btn = screen.getByTestId("toggle-btn");
@@ -98,9 +111,11 @@ describe("React Testing Library UTV", () => {
   // input > fireEvent
   test("fire EVENT input", async () => {
     render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
+      <Provider store={createReduxStore()}>
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      </Provider>
     );
     const inputElm = screen.getByPlaceholderText(/введите значение.../i);
     // ожидается эл.id.value-elem пустой
@@ -118,9 +133,11 @@ describe("React Testing Library UTV", () => {
   // input > userEvent
   test("user EVENT input", async () => {
     render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
+      <Provider store={createReduxStore()}>
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      </Provider>
     );
     const inputElm = screen.getByPlaceholderText(/введите значение.../i);
     // ожидается эл.id.value-elem пустой

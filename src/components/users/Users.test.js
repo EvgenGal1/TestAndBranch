@@ -35,6 +35,7 @@ describe("USERS test", () => {
   test("USERS. axios, redirect link", async () => {
     // отрисов.Комп. + обёртка MemoryRouter
     render(
+      // ! обёртка MemoryRouter от ошб. The above error occurred in the <Link>|<Routes> component | Cannot destructure property 'basename' ... null
       <MemoryRouter>
         <Users />
       </MemoryRouter>
