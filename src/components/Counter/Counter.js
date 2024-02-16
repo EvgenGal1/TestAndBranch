@@ -21,16 +21,22 @@ const Counter = () => {
   };
 
   return (
-    <div data-testid="counter">
+    <div className="counter">
       <div>Counter</div>
       {/* знач.счётчика */}
       <div>
-        {value}
+        <div className="value-title">
+          <div data-testid="value-title">{value}</div>
+        </div>
         <p>знач.счётчика</p>
       </div>
       {/* кнп. +/- */}
-      <button onClick={onIncrement}>Increment</button>
-      <button onClick={onDecrement}>Decrement</button>
+      <button data-testid="increment-btn" onClick={onIncrement}>
+        Increment
+      </button>
+      <button data-testid="decrement-btn" onClick={onDecrement}>
+        Decrement
+      </button>
     </div>
   );
 };

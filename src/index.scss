@@ -37,12 +37,20 @@
     button {
       margin-right: 5px;
     }
-  }
-  .users {
-    display: flex;
-    flex-direction: column;
-    a {
-      background-color: unset;
+    .users {
+      display: flex;
+      flex-direction: column;
+      a {
+        background-color: unset;
+      }
+    }
+    .counter {
+      div.value-title {
+        display: inline-block;
+        div[data-testid="value-title"] {
+          margin: 0;
+        }
+      }
     }
   }
 }
