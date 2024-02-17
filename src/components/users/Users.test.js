@@ -53,7 +53,7 @@ describe("USERS test", () => {
   test("USERS. redirect > UserDetalisPage", async () => {
     // ^ перенос render в renderWithRouter
     // render(
-    // ^ использ.helper переходов м/у стр.(отрис.AppRouter + передан.Комп. + передан.путь)
+    // ^ использ.helper переходов м/у стр.(отрис.AppRouter. Передан.Комп. ?+ передан.путь)
     renderWithRouter(<Users />); // ^ альтер.вар. - null, "/users"
     // );
     // получ.масс.эл.

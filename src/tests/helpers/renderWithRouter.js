@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import AppRouter from "../../router/AppRouter";
 import { createReduxStore } from "../../store/store";
 
-// экспорт fn.отрисовки всех маршрутов и Комп. Приним.Комп.отрисовки и начальн.маршрут
+// экспорт fn.отрисовки Комп. по всем маршрутам. Приним.Комп.отрисовки и начальн.маршрут. Оборач.в MemoryRouter
 export const renderWithRouter = (component, initialRoute = "/") => {
   //  возвращ.сразу render
   return render(
