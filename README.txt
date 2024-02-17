@@ -88,6 +88,8 @@ $$ npm i redux-mock-store - возм.от ошб.отсуств.обёртки P
 ++ counterReducer.test.js тест редьюсера >> describe, counterReducer(increment|decrement|undefined).toEqual(1|-1), test,PASS
 ++ Counter.test тест >> describe, getByTestId/toHaveTextContent,uE.clk, expect, test,PASS
 ++ tests/helpers/renderWithRedux.js helper состояний.(экспорт fn.отрисовки нач.состояния Комп. Приним.Комп.отрисовки(обёрнут в Provider) и нач.сост.)
+++ tests/helpers/renderRouterAndRedux.js helper совмещённый переходов м/у стр. и состояний.
+## Counter.test тест >> renderRouterAndRedux(initialRoute, initialState), test,PASS
 
 
 !! https://habr.com/ru/companies/elbrusbootcamp/articles/651033/ - форма отправки денег с кошельков
